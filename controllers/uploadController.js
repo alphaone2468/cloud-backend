@@ -17,14 +17,13 @@ exports.uploadData = async (req, res) => {
         const obj = {
             title: req.body.title,
             description: req.body.description,
-            image: uploadResponseimg.url,
-            video: uploadResponsevid.url
+            image: uploadResponseimg.secure_url,
+            video: uploadResponsevid.secure_url
         };
 
         let result = await data(obj);
         result = await result.save();
-
-        res.json({ msg: [uploadResponseimg.url, uploadResponsevid.url] });
+        res.json({ msg: [uploadResponseimg.secure_url, uploadResponsevid.secure_url] });
     } catch (err) {
         console.error(err);
         res.status(500).json({ err: 'Something went wrong' });
