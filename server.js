@@ -9,7 +9,7 @@ const PORT = process.env.PORT
 const app = express();
 app.use(cors());
 app.use(cors({
-  origin: 'https://neon-flask-enterprises-task.netlify.app/' // Replace with the origin you want to allow
+  origin: 'https://neon-flask-enterprises-task.netlify.app' // Replace with the origin you want to allow
 }));
 app.use(bodyParser.json({ limit: '100mb' }));
 app.use(bodyParser.urlencoded({ limit: '100mb', extended: true }));
